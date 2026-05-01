@@ -1,0 +1,8 @@
+tag	hypothesis
+slim-base	swap node:22 -> node:22-slim (slim Debian, ~250MB base vs ~1.1GB)
+alpine-base	swap to node:22-alpine (musl libc, ~80MB base) + libc6-compat for native modules
+multistage-slim	multi-stage on slim: build with dev deps, runtime carries only prod deps + .next + public
+multistage-alpine	multi-stage on alpine: same as above but alpine base everywhere
+standalone-slim	enable Next.js standalone output on slim: runtime drops node_modules entirely; only server.js + minimal vendored deps
+standalone-alpine	standalone output on alpine
+distroless-standalone	distroless/nodejs22-debian12 runtime over standalone bundle: no shell, no apt, just node + bundle

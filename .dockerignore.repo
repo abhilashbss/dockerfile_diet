@@ -1,0 +1,43 @@
+# Installed at the repo root by score.sh on first run. Keeps the build context lean.
+# Frozen — do not edit as part of an experiment.
+
+# Build/cache artifacts
+.next
+.next/cache
+.turbo
+out
+build
+dist
+coverage
+*.tsbuildinfo
+
+# Dev deps that should be reinstalled clean inside the build
+node_modules
+
+# Autoresearch project itself — never ship into the image
+dockerfile_autoresearch
+
+# VCS / IDE / OS
+.git
+.github
+.gitignore
+.idea
+.vscode
+.DS_Store
+
+# Env / secrets — never bake into images
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Vercel
+.vercel
+
+# Misc
+README.md
